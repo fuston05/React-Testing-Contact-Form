@@ -8,6 +8,7 @@ const ContactForm = () => {
   });
   const onSubmit = data => {
     setData(data);
+    // BUG??? no form reset??
   };
 
   return (
@@ -17,7 +18,7 @@ const ContactForm = () => {
           <label htmlFor="firstName">First Name*</label>
           <input
             name="firstName"
-            placeholder="bill"
+            placeholder="bill"               /** BUG ????? */
             ref={register({ required: true, maxLength: 3 })}
           />
           {errors.firstName && (
@@ -38,6 +39,7 @@ const ContactForm = () => {
         </div>
 
         <div>
+                                      {/* BUG */}
           <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
             Email*
           </label>
